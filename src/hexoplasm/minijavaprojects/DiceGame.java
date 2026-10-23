@@ -41,24 +41,46 @@ public class DiceGame {
         System.out.print("\n\nPlayer 1, enter your name: ");
         String user1 = inp.nextLine();
         //delay(4000);
-        /*System.out.print("\n\nPlayer 2, enter your name: ");
-        String user2 = inp.nextLine();*/
+        System.out.print("\n\nPlayer 2, enter your name: ");
+        String user2 = inp.nextLine();
 
+        // Player 1
         int u1s1 = roll();
         int u1s2 = roll();
         int u1x = (u1s1+u1s2)%2;
 
         if (u1x == 0) {
-            System.out.println("You rolled an even number, +10 points!");
+            System.out.println(user1+" rolled an even number, +10 points!");
             u1s += 10;
         } else if (u1x == 1) {
-            System.out.println("You rolled an odd number, -5 points!");
+            System.out.println(user1+" rolled an odd number, -5 points!");
             if (u1x>4) u1s -= 5; else u1s = 0;
         } else {
-            System.out.println("You rolled a double!");
+            System.out.println(user1+" rolled a double!");
             int x = roll();
             u1s += x;
-            System.out.println("You re-rolled, and got "+x+"!");
+            System.out.println(user1+" re-rolled, and got "+x+"!");
+        }
+
+
+
+        // Player 2
+
+        int u2s1 = roll();
+        int u2s2 = roll();
+        int u2x = (u2s1+u2s2)%2;
+
+        if (u2x == 0) {
+            System.out.println(user2+" rolled an even number, +10 points!");
+            u2s += 10;
+        } else if (u2x == 1) {
+            System.out.println(user2+" rolled an odd number, -5 points!");
+            if (u1x>4) u2s -= 5; else u2s = 0;
+        } else {
+            System.out.println(user2+" rolled a double!");
+            int x = roll();
+            u2s += x;
+            System.out.println(user2+" re-rolled, and got "+x+"!");
         }
 
 
